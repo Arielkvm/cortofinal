@@ -1,9 +1,14 @@
 package corto_final_kavm;
 
+import dao.FiltroDao;
+import modelo.Filtro;
+
 /**
  * @author kevin
  */
 public class NewJFrame extends javax.swing.JFrame {
+    
+    FiltroDao FD = new FiltroDao();
 
     public NewJFrame() {
         initComponents();
@@ -60,6 +65,18 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Profesion");
 
         jLabel6.setText("Estado");
@@ -74,6 +91,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jRadioButton2.setText("No");
 
         jButton1.setText("Insertar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Modificar");
 
@@ -200,6 +222,18 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        FD.create(new Filtro(21, jTextField2.toString(), jTextField3.toString(), jTextField4.toString(), jRadioButton1.isSelected()));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
 
     public static void main(String args[]) {
